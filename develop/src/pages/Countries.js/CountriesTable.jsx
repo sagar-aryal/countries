@@ -1,24 +1,31 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Pagination from "../../components/Main/Pagination";
 import Table from "../../components/Main/Table";
 import Loading from "../../components/Main/Loading";
+import { cartActionCreator } from "../../redux/actions";
 
 const CountriesTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [countriesPerPage] = useState(10);
-  const countries = useSelector((state) => state.countries);
-  console.log(countries.countries);
+  const dispatch = useDispatch();
+  const countries = useSelector((state) => state.countries.countries);
+  console.log(countries);
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  console.log(cartItems);
+
+  // Add to Cart
+  const handleAddToCart = (countries) => {
+    dispatch(cartActionCreator.addToCart(countries));
+    console.log("Added !");
+  };
 
   // Getting  pages
 
   const indexOfLastPage = currentPage * countriesPerPage;
   const indexOfFirstPage = indexOfLastPage - countriesPerPage;
-  const currentCountries = countries.countries.slice(
-    indexOfFirstPage,
-    indexOfLastPage
-  );
-  const totalCountries = countries.countries.length;
+  const currentCountries = countries.slice(indexOfFirstPage, indexOfLastPage);
+  const totalCountries = countries.length;
   const lastpage = currentPage * countriesPerPage + 1;
 
   // Change page
@@ -32,7 +39,10 @@ const CountriesTable = () => {
         <Loading />
       ) : (
         <div className="p-8 mt-6 rounded shadow bg-white">
-          <Table currentCountries={currentCountries} />
+          <Table
+            currentCountries={currentCountries}
+            handleAddToCart={handleAddToCart}
+          />
           <Pagination
             countriesPerPage={countriesPerPage}
             totalCountries={totalCountries}

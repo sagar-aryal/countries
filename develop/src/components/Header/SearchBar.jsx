@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const SearchBar = () => {
-  const [searchName, setSearchName] = useState("");
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setSearchName(e.target.value);
-  };
+const SearchBar = ({ searchName, handleSearch }) => {
   return (
     <>
       <input
