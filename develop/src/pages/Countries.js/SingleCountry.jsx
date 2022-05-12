@@ -6,6 +6,7 @@ import { ThemeContext } from "../../components/Header/themes";
 
 const SingleCountry = () => {
   const countries = useSelector((state) => state.allCountries.countries);
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const { id } = useParams();
 
   const dispatch = useDispatch();
@@ -39,11 +40,12 @@ const SingleCountry = () => {
         <div className="flex justify-around pb-4">
           <button
             type="button"
-            className=" inline-block px-6 py-2.5  bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-400 "
+            className=" inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-400 disabled:bg-slate-500"
             style={{ background: themes.background }}
             onClick={() => dispatch(cartActionCreator.addToCart(country))}
+            disabled={cartItems.includes(country)}
           >
-            FAVORITE
+            Favorite
           </button>
           <Link
             to="/"
