@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { cartActionCreator } from "../../redux/actions";
 import { useSelector, useDispatch } from "react-redux";
+import { ThemeContext } from "../Header/themes";
 
 const tableHeadings = [
   "Flag",
@@ -17,6 +18,8 @@ const tableHeadings = [
 const Table = ({ paginatedCountries }) => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const dispatch = useDispatch();
+
+  const { themes } = useContext(ThemeContext);
 
   return (
     <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -60,7 +63,10 @@ const Table = ({ paginatedCountries }) => {
                 </td>
                 <td className="px-6 py-4 text-sm font-medium text-gray-900">
                   <button>
-                    <VisibilityOutlinedIcon color="primary" />
+                    <VisibilityOutlinedIcon
+                      color="primary"
+                      style={{ fill: themes.background }}
+                    />
                   </button>
                 </td>
                 <td className="px-6 py-4 text-sm font-medium text-gray-900 disabled:bg-gray">
@@ -71,7 +77,10 @@ const Table = ({ paginatedCountries }) => {
                     }
                     disabled={cartItems.includes(country)}
                   >
-                    <FavoriteBorderIcon color="primary" />
+                    <FavoriteBorderIcon
+                      color="primary"
+                      style={{ fill: themes.background }}
+                    />
                   </button>
                 </td>
               </tr>

@@ -29,14 +29,20 @@ const Pagination = ({
       </span>
       <div className="inline-flex mt-2 xs:mt-0">
         <button
-          onClick={() => prevPage()}
+          onClick={() => {
+            prevPage();
+            window.scroll();
+          }}
           className="inline-flex items-center py-2 px-4 text-sm font-medium text-white bg-gray-600 rounded-l hover:bg-gray-900 "
         >
           <ArrowBackIcon />
           <span className="pl-2"> Prev</span>
         </button>
         <button
-          onClick={() => nextPage()}
+          onClick={() => {
+            nextPage();
+            window.scroll();
+          }}
           className="inline-flex items-center py-2 px-4 text-sm font-medium text-white bg-gray-600 rounded-r border-0 border-l border-gray-700 hover:bg-gray-900"
         >
           <span className="pr-2"> Next</span>
