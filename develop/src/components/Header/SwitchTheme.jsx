@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeContext, themes } from "./themes";
 
-const SwitchTheme = () => {
+const SwitchTheme = ({ closeSideBar }) => {
   const { setThemes } = useContext(ThemeContext);
 
   const themePurple = () => {
@@ -29,7 +29,10 @@ const SwitchTheme = () => {
           <button
             type="button"
             className="  font-medium rounded text-lg p-4 mx-5 my-2 hover:bg-fuchsia-100"
-            onClick={themePurple}
+            onClick={() => {
+              themePurple();
+              closeSideBar();
+            }}
           >
             <span className=" rounded text-lg px-5 py-2.5 mr-2 text-white bg-fuchsia-900  ">
               P
@@ -41,7 +44,10 @@ const SwitchTheme = () => {
           <button
             type="button"
             className="font-medium rounded text-lg p-4 mx-5 my-2 hover:bg-blue-100 "
-            onClick={themeBlue}
+            onClick={() => {
+              themeBlue();
+              closeSideBar();
+            }}
           >
             <span className=" rounded text-lg px-5 py-2.5 mr-2  text-white bg-blue-700">
               B
@@ -53,7 +59,10 @@ const SwitchTheme = () => {
           <button
             type="button"
             className="font-medium rounded text-lg p-4 mx-5 my-2 hover:bg-green-100"
-            onClick={themeGreen}
+            onClick={() => {
+              themeGreen();
+              closeSideBar();
+            }}
           >
             <span className="rounded text-lg px-5 py-2.5 mr-2  text-white bg-green-700">
               G
@@ -65,7 +74,10 @@ const SwitchTheme = () => {
           <button
             type="button"
             className="font-medium rounded text-lg p-4 mx-5 my-2 hover:bg-red-100"
-            onClick={themeRed}
+            onClick={() => {
+              themeRed();
+              closeSideBar();
+            }}
           >
             <span className=" rounded text-lg px-5 py-2.5 mr-2  text-white bg-red-500">
               R

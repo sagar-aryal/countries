@@ -29,7 +29,14 @@ const NavBar = ({ toggleTheme }) => {
         <button onClick={showSwitchTheme}>
           <MenuOpenOutlinedIcon />
         </button>
-        {switchThemeOpen ? <SwitchTheme toggleTheme={toggleTheme} /> : " "}
+        {switchThemeOpen ? (
+          <SwitchTheme
+            toggleTheme={toggleTheme}
+            closeSideBar={showSwitchTheme}
+          />
+        ) : (
+          " "
+        )}
 
         <Link to="/">
           <h1 className="text-3xl font-bold">Countries</h1>

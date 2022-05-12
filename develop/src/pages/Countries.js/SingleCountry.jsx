@@ -25,7 +25,10 @@ const SingleCountry = () => {
         />
 
         <div className="p-6">
-          <h5 className="text-purple-700 text-xl font-medium mb-2">
+          <h5
+            className="text-purple-700 text-xl font-medium mb-2"
+            style={{ color: themes.background }}
+          >
             {name.common}
           </h5>
           <p className="text-gray-700 text-base mb-4">
