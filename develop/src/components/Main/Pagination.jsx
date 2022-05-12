@@ -31,7 +31,7 @@ const Pagination = ({
         <button
           onClick={() => {
             prevPage();
-            window.scroll();
+            window.scrollTo(0, 0);
           }}
           className="inline-flex items-center py-2 px-4 text-sm font-medium text-white bg-gray-600 rounded-l hover:bg-gray-900 "
         >
@@ -41,7 +41,7 @@ const Pagination = ({
         <button
           onClick={() => {
             nextPage();
-            window.scroll();
+            window.scrollTo(0, 0);
           }}
           className="inline-flex items-center py-2 px-4 text-sm font-medium text-white bg-gray-600 rounded-r border-0 border-l border-gray-700 hover:bg-gray-900"
         >
