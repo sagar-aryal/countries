@@ -3,6 +3,6 @@ import { cartReducer } from "./cartReducer";
 import { countriesReducer } from "./countriesReducer";
 
 export const rootReducers = combineReducers({
-  countries: countriesReducer,
+  allCountries: countriesReducer,
   cart: cartReducer,
 });

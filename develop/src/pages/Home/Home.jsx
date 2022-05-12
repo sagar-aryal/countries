@@ -1,10 +1,10 @@
 import React from "react";
-import CountriesLists from "../Countries.js/CountriesLists";
+import CountriesList from "../Countries.js/CountriesList";
 
 const Home = () => {
   return (
     <>
-      <CountriesLists />
+      <CountriesList />
     </>
   );
 };

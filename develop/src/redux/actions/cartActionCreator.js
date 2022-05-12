@@ -1,15 +1,15 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from "./actionTypes";
 
-export const addToCart = (payload) => {
+export const addToCart = (country) => {
   return {
     type: ADD_TO_CART,
-    payload,
+    payload: country,
   };
 };
 
-export const removeFromCart = (payload) => {
+export const removeFromCart = (country) => {
   return {
     type: REMOVE_FROM_CART,
-    payload,
+    payload: country,
   };
 };

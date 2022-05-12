@@ -1,15 +1,19 @@
 import React from "react";
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import NavBar from "./components/Header/NavBar";
 import Home from "./pages/Home/Home";
+import Cart from "./components/Header/Cart";
 
 function App() {
   return (
-    <Provider store={store}>
+    <BrowserRouter>
       <NavBar />
-      <Home />
-    </Provider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="cart" element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

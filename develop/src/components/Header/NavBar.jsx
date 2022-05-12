@@ -1,19 +1,23 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
-import SearchBar from "./SearchBar";
 import SwitchTheme from "./SwitchTheme";
 
 import MenuOpenOutlinedIcon from "@mui/icons-material/MenuOpenOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Badge } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [switchThemeOpen, setswitchThemeOpen] = useState(false);
+
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
   // toggling switch theme button
   const showSwitchTheme = () => {
     setswitchThemeOpen(!switchThemeOpen);
   };
+
   return (
     <nav className="fixed w-full h-20 flex justify-between items-center bg-purple-600 text-white  border-gray-200 px-4">
       <div className="flex items-center gap-2">
@@ -21,12 +25,17 @@ const NavBar = () => {
           <MenuOpenOutlinedIcon />
         </button>
         {switchThemeOpen ? <SwitchTheme /> : " "}
-        <h1 className="text-3xl font-bold">Countries</h1>
+
+        <Link to="/">
+          <h1 className="text-3xl font-bold">Countries</h1>
+        </Link>
       </div>
-      <SearchBar />
-      <Badge badgeContent={2} color="error">
-        <ShoppingCartOutlinedIcon />
-      </Badge>
+
+      <Link to="/cart">
+        <Badge badgeContent={cartItems.length} color="error">
+          <FavoriteBorderIcon />
+        </Badge>
+      </Link>
     </nav>
   );
 };
