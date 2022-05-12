@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { Link } from "react-router-dom";
+
 import { cartActionCreator } from "../../redux/actions";
 import { useSelector, useDispatch } from "react-redux";
 import { ThemeContext } from "../Header/themes";
+
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const tableHeadings = [
   "Flag",
@@ -22,8 +25,8 @@ const Table = ({ paginatedCountries }) => {
   const { themes } = useContext(ThemeContext);
 
   return (
-    <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-      <div className="inline-block min-w-full shadow rounded-lg p-2">
+    <div className="mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto ">
+      <div className="inline-block min-w-full rounded-lg p-2  border-purple-300">
         <table>
           <thead>
             <tr>
@@ -39,7 +42,7 @@ const Table = ({ paginatedCountries }) => {
             {paginatedCountries.map((country) => (
               <tr
                 key={country.name.common}
-                className="border-b transition duration-300 ease-in-out hover:bg-gray-200"
+                className="border-b border-purple-300 duration-300 ease-in-out hover:bg-gray-200"
               >
                 <td className="m-2 object-cover h-10 w-10 ">
                   <img src={country.flags.png} alt={country.name.common} />
@@ -62,12 +65,12 @@ const Table = ({ paginatedCountries }) => {
                   {country.region}
                 </td>
                 <td className="px-6 py-4 text-sm font-medium text-gray-900">
-                  <button>
+                  <Link to={`countries/${country.name.common}`}>
                     <VisibilityOutlinedIcon
                       color="primary"
                       style={{ fill: themes.background }}
                     />
-                  </button>
+                  </Link>
                 </td>
                 <td className="px-6 py-4 text-sm font-medium text-gray-900 disabled:bg-gray">
                   <button

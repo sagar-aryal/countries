@@ -51,7 +51,7 @@ const CountriesList = () => {
     lastpage <= totalCountries && setCurrentPage(currentPage + 1);
 
   return (
-    <div className=" w-full md:w-3/5  mx-auto px-2 pt-20">
+    <div className=" w-full lg:w-3/5  mx-auto px-2 pt-20">
       {loading && loading ? (
         <Loading />
       ) : (
