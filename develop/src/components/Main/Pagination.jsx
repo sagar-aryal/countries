@@ -33,7 +33,7 @@ const Pagination = ({
             prevPage();
             window.scrollTo(0, 0);
           }}
-          className="inline-flex items-center py-2 px-4 text-sm font-medium text-white bg-purple-600 rounded-l hover:bg-purple-900 "
+          className="inline-flex items-center py-2 px-4 text-sm font-medium text-white bg-purple-700 rounded-l hover:bg-purple-500 "
           style={{ background: themes.background }}
         >
           <ArrowBackIcon />
@@ -45,7 +45,7 @@ const Pagination = ({
             nextPage();
             window.scrollTo(0, 0);
           }}
-          className="inline-flex items-center py-2 px-4 text-sm font-medium text-white bg-purple-600 rounded-r border-0 border-l border-purple-700 hover:bg-purple-900"
+          className="inline-flex items-center py-2 px-4 text-sm font-medium text-white bg-purple-700 rounded-r border-0 border-l border-purple-700 hover:bg-purple-500"
           style={{ background: themes.background }}
         >
           <span className="pr-2"> Next</span>

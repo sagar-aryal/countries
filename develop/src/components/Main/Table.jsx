@@ -64,15 +64,16 @@ const Table = ({ paginatedCountries }) => {
                 <td className="px-6 py-4 text-sm font-medium text-gray-900">
                   {country.region}
                 </td>
-                <td className="px-6 py-4 text-sm font-medium text-gray-900">
+                <td className="px-6 py-4 text-sm font-medium text-gray-900 ">
                   <Link to={`countries/${country.name.common}`}>
                     <VisibilityOutlinedIcon
                       color="primary"
+                      className="hover:animate-spin"
                       style={{ fill: themes.background }}
                     />
                   </Link>
                 </td>
-                <td className="px-6 py-4 text-sm font-medium text-gray-900 disabled:bg-gray">
+                <td className="px-6 py-4 text-sm font-medium text-gray-900 disabled:bg-gray ">
                   <button
                     className="disabled:bg-slate-300 rounded-full p-1"
                     onClick={() =>
@@ -82,6 +83,7 @@ const Table = ({ paginatedCountries }) => {
                   >
                     <FavoriteBorderIcon
                       color="primary"
+                      className="hover:animate-spin"
                       style={{ fill: themes.background }}
                     />
                   </button>

@@ -25,9 +25,9 @@ const NavBar = ({ toggleTheme }) => {
       className="fixed w-full h-20 flex justify-between items-center bg-purple-600 text-white  border-gray-200 px-4"
       style={{ background: themes.background }}
     >
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 ">
         <button onClick={showSwitchTheme}>
-          <MenuOpenOutlinedIcon />
+          <MenuOpenOutlinedIcon className="hover:animate-spin" />
         </button>
         {switchThemeOpen ? (
           <SwitchTheme
@@ -43,7 +43,7 @@ const NavBar = ({ toggleTheme }) => {
         </Link>
       </div>
 
-      <Link to="/cart" className="animate-bounce">
+      <Link to="/cart" className="animate-bounce hover:animate-pulse">
         <Badge badgeContent={cartItems.length} color="error">
           <FavoriteBorderIcon />
         </Badge>
