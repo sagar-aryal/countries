@@ -33,7 +33,7 @@ const Cart = () => {
                     {country.name.common}
                   </td>
                   <td className="px-6 py-4">
-                    <Link to={`countries/${country.name.common}`}>
+                    <Link to={`cart/${country.name.common}`}>
                       <VisibilityOutlinedIcon color="primary" />
                     </Link>
                   </td>

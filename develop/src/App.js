@@ -21,7 +21,11 @@ function App() {
             <Route index element={<CountriesList />} />
             <Route path=":id" element={<SingleCountry />} />
           </Route>
-          <Route path="cart" element={<Cart />} />
+          <Route path="cart">
+            <Route index element={<Cart />} />
+            <Route path="countries" element={<CountriesList />} />
+            <Route path=":id" element={<SingleCountry />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </ThemeContext.Provider>
