@@ -32,6 +32,7 @@ const SwitchTheme = ({ closeSideBar }) => {
             onClick={() => {
               themePurple();
               closeSideBar();
+              window.scrollTo(0, 0);
             }}
           >
             <span className=" rounded text-lg px-5 py-2.5 mr-2 text-white bg-fuchsia-900  ">
@@ -47,6 +48,7 @@ const SwitchTheme = ({ closeSideBar }) => {
             onClick={() => {
               themeBlue();
               closeSideBar();
+              window.scrollTo(0, 0);
             }}
           >
             <span className=" rounded text-lg px-5 py-2.5 mr-2  text-white bg-blue-700">
@@ -62,6 +64,7 @@ const SwitchTheme = ({ closeSideBar }) => {
             onClick={() => {
               themeGreen();
               closeSideBar();
+              window.scrollTo(0, 0);
             }}
           >
             <span className="rounded text-lg px-5 py-2.5 mr-2  text-white bg-green-700">
@@ -77,6 +80,7 @@ const SwitchTheme = ({ closeSideBar }) => {
             onClick={() => {
               themeRed();
               closeSideBar();
+              window.scrollTo(0, 0);
             }}
           >
             <span className=" rounded text-lg px-5 py-2.5 mr-2  text-white bg-red-500">

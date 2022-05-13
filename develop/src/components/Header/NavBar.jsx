@@ -39,11 +39,11 @@ const NavBar = ({ toggleTheme }) => {
         )}
 
         <Link to="/">
-          <h1 className="text-3xl font-bold">Countries</h1>
+          <h1 className="text-3xl font-bold hover:animate-pulse">Countries</h1>
         </Link>
       </div>
 
-      <Link to="/cart" className="animate-bounce hover:animate-pulse">
+      <Link to="/cart" className="animate-bounce ">
         <Badge badgeContent={cartItems.length} color="error">
           <FavoriteBorderIcon />
         </Badge>
