@@ -75,7 +75,7 @@ const Table = ({ paginatedCountries }) => {
                 </td>
                 <td className="px-6 py-4 text-sm font-medium text-gray-900 disabled:bg-gray ">
                   <button
-                    className="disabled:bg-slate-300 rounded-full p-1"
+                    className="disabled:bg-slate-300 rounded-full p-1 "
                     onClick={() =>
                       dispatch(cartActionCreator.addToCart(country))
                     }
