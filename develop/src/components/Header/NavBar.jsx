@@ -43,7 +43,7 @@ const NavBar = ({ toggleTheme }) => {
         </Link>
       </div>
 
-      <Link to="/cart">
+      <Link to="/cart" className="animate-bounce">
         <Badge badgeContent={cartItems.length} color="error">
           <FavoriteBorderIcon />
         </Badge>

@@ -25,7 +25,7 @@ const Table = ({ paginatedCountries }) => {
   const { themes } = useContext(ThemeContext);
 
   return (
-    <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-auto ">
+    <div className="sm:-mx-8 px-4 sm:px-8 py-4 overflow-auto ">
       <div className="inline-block min-w-full rounded-lg p-2  border-purple-300">
         <table>
           <thead>
